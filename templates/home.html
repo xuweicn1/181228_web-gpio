@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+   <title>进风口</title>
+</head>
+
+<body>
+   <h1>进风口状态</h1>
+
+   {% for pin in pins %}
+   <p>{{ pins[pin].name }}：
+   {% if pins[pin].state == true %}
+      开启 (<a href="/{{pin}}/off" >关闭</a>)
+   {% else %}
+      关闭 (<a href="/{{pin}}/on" >打开</a>)
+   {% endif %}
+   </p>
+   {% endfor %}
+
+</body>
+</html>
